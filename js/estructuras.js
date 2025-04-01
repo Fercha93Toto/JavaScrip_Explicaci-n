@@ -310,4 +310,141 @@ if (hora < 12) { // Si es verdadera ejecuta el codigo del bloque
     console.log("Buenas noches");
 }
 
-// ------------------------------------------------------ ESTRUCTURA FOR -----------------------------------------------
+// ------------------------------------------------------ ESTRUCTURA FOR --------------------------------------------
+
+/**
+ *  Las estructuras if y else if no son muy eficientes cuando se necesita repetir un bloque de codigo un n+imero determinado de veces
+ Ejemplo: Si se requiere mostrar un mensaje 5 veces, se tendrìa que escribir el codigo 5 veces.
+ La estructura for permite realizar este tipo de repeticiones (también llamadas bucle) de una forma más sencilla.
+ No obstante su definiciòn formal no es tan sencilla como la de if y else if.
+
+ La estructura for se utiliza para repetir un bloque de código un número determinado de veces.
+
+ form (inicialización; condición; incremento) {
+    Código que se ejecuta en cada interacción
+}
+La idea del funcionamiento de un bucle es la siguiente:
+"Mientras la condición indicada se siga cumpliendo, repite la ejecución de las instrucciones definidas dentro del for. Además, después de cada interacciòn actualizada el valor de las variables que se utilizan en la condición."
+
+Componentes del for:
+Inicialización: Se ejecuta solo una vez al comienzo del bucle. Aquí es donde se definen las variables que controlán la condición.
+Condición: Es la expresión que se evalúa antes de cada iteración. Mientras esta condición sea verdaera, el buvle continuará ejecutándose.
+Actualización: Se ejecuta al final de cada interación, justo antes de volver a evaluar la condición. Es común actualizar variables como contadores en este paso.
+
+Ejemplo de un bucle for:
+Supongamos que queremos imprimir lo números del 1 al 5 en la consola:
+ */
+
+for (let i = 1; i <= 5; i++) {
+    //console.log(i);
+}
+
+/*
+Desglosando el bucle:
+Iniciación: let i = 1 → Se establece la variable i con valor 1.
+Condición: 1 <= 5 → El bucle seguirá ejecutándose mientras i sea menos o igual a 5.
+Actualización: i++ → Depués de cda imteracción, el valor de i se incrementa en 1.
+Interacciones de bucle:
+
+Primera interacción: i = 1, la condición i <= 5 es true, se imprime 1 y luego i++, lo que hace que i se convierte en 2.
+Segunda interacción: i = 2, la condición i <= 5 es true, se imprime 2 y luego i++, lo que hace que i se convierta en 3.
+Tercera interacción: i = 3, la condición i <= 5 es true, se imprime 3 y luego i++, lo que hace que i se convierta en 4.
+Cuarta interacción: i = 4, la condición i <= 5 es true, se imprime 4 y luego i++, lo que hace que i se convierta en 5.
+Quinta interacción: i = 5, la condición i <= 5 es true, se imprime 5 y liego i++, lo que hace qu i se convierta en 6.
+Condición fallida: i = 5, la condición i <= e es false, por lo que el bucle termina.
+*/
+
+// --------------------------------------------------------------------- QUÉ ES UN METODO -------------------------------
+
+//Un método en programación es una función asociada a un objeto o clase que realiza una tarea especifica. Los metodos son una parte fundamental de la programaciòn orientada a objetos, pero también se utilizan en otros paradigmas de progrmación.
+
+/*
+Definición de método:
+Un método es una función que está asociada a un objeto y se puede acceder a los datos de ese objeto o modificar su estado.
+En otras palabras, un método es una acción que un objeto puede realizar, y generalmente se define dentro de la estructura de ese objeto.
+Métodos en JavaScript
+Es JavaScript, los métodos son funciones que se definen dentro de un objeto. Pueden operar sobre las propiedades del objeto y realizar diversas tareas. Los métodos se invocan usando la notación de punto. o la notación de corchetes [].
+*/
+let persona1= {
+    nombre: "Juan", edad: 30, saludar: function() {
+        //console.log("Hola, mi nombre es" + this.nombre);
+    }
+};
+
+// Llamado al método
+persona1().saludar(); // "Hola, mi nombre es Juan"
+
+let persona3 = {
+    nombre: "Jorge",
+    edad: 35,
+    saludar() {
+        //console.log("Hola" mi nombre es " + this.nombre);
+}
+};
+
+persona3.saludar(); // "Hola, mi nombre es Juan"
+
+/*
+En este caso:
+
+saludar es un método del objeto persona.
+El método saludar() accede a la propiedad nombre del objeto persona usando la palabra clave this, que se refiere al objeto en el que método está siendo invocado.
+
+Sintaxis moderna de los métodos en objetos (ES6+):
+A partir de ECMAScript 6 (ES6), también se puede escribir métodos de una fomra más concisa: 
+
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    saludar() {
+    console.log("Hola, mi nombre es"+ this.nombre)
+    }
+};
+
+// Llamando al método
+persona.saludar(); //"Hola, mi nombre es Juan"
+La difenrencia es que no es necesario escribir la palabra clave function, simplemente se define los métodos con un nombre seguido de paréntesis y llaves.
+*/
+
+// --------------------------------------------------------------------------------------------------------------
+/**
+ * /*
+En programación, un objeto es una colecciòn de propiedades y métodos. Un objeto permite agrupas datos y funciones que pertenecen a una entidad o concept especifico. En JavaScript, los objetos son una de las estructuras de datos más importantes, y puedes usalros para presentar casi cualquier cosa: una persona, un coche, una película, etc.
+
+1. ¿Qué es un objeto?
+Un objeto es una entidad que contiene un conjunto de propiedades y métodos. Las propiedades son valores asociados con el objeto y los métodos son funciones asociadas a este objeto.
+
+Propuedades: Son los valores que están asociados con una clave (o nombre). Estos valores pueden ser de cualquier tipo (números, cadenas, arrys, etc.)
+Métodos: Son funciones que están asociadas con el objeto y pueden acceder o modificar las propiedades del objeto.
+2. Sintaxis: de un objeto de JavaScript
+Los objetos den JavaScript se definen utilizando llaves {} y sus propiedades se definen como pares de clase (también llamada key) y valor (key: value).
+
+Ejemplo básico de un objeto:
+*/
+let persona4 = {
+    nombre: "Ana",
+    saludar() {
+        //console.log("Hola, mi nombre es" + this.nombre);
+    }
+};
+
+persona4.saludar(); // "Hola, mi nombre es Ana"
+
+// ------------------------------------------------------------------------------------------------------------
+
+/**
+ * for...in
+El bucle for...in en JavaScript se utiliza para iterar sobe las propiedades enumrables de un objeto. o sobre los índices de los elementos en un array. A diferencia del bucle for, que se utiliza para iterar sobre elementos con un contador, el bucle for...in se enfoca en las claves o índices del objeto o array.
+for (variable in objeto) {
+código que se ejecuta en cada interacción
+}
+variable: es la variable que tomará cada propiedad del objeto o cada índice del array en cada iteración.
+objeto: es el objeto o array sobre el que está iterando.
+
+Supongamos que tenemos un objeo con varias propiedades, y que iterar sobre sus claves:
+*/
+let profesor = { nombre: "Juan", edad: 30, ciudad: "Madrid" };
+
+for (let clave in profesor) {
+    console.log(clave + ": " + profesor[clave]);
+}
